@@ -1,0 +1,240 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    color: #19352d;
+    background: #f2f7f3;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    padding: 2.5rem 1.5rem;
+    color: #fff;
+    text-align: center;
+    background: #176b4d;
+}
+
+header h1 {
+    margin: 0;
+    font-size: clamp(2rem, 5vw, 3rem);
+}
+
+header p {
+    margin: 0.35rem 0 0;
+    color: #d9eee3;
+}
+
+main {
+    width: min(100% - 2rem, 58rem);
+    margin: 3rem auto;
+    flex: 1;
+}
+
+.budget-card {
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+    background: #fff;
+    border: 1px solid #dce9df;
+    border-radius: 1rem;
+    box-shadow: 0 12px 32px rgb(25 53 45 / 8%);
+}
+
+.budget-card h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+
+.budget-card > p {
+    margin-top: 0;
+    color: #53685f;
+}
+
+button {
+    padding: 0.8rem 1.2rem;
+    color: #fff;
+    background: #176b4d;
+    border: 0;
+    border-radius: 0.5rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #10583e;
+}
+
+button:focus-visible {
+    outline: 3px solid #8bd0a8;
+    outline-offset: 3px;
+}
+
+.budget-form {
+    display: grid;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.budget-form[hidden] {
+    display: none;
+}
+
+.budget-form h3 {
+    margin: 0.8rem 0 0;
+}
+
+.budget-form label {
+    display: grid;
+    gap: 0.3rem;
+    color: #53685f;
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.budget-form input,
+.budget-form select {
+    width: 100%;
+    min-width: 0;
+    padding: 0.7rem 0.8rem;
+    color: #19352d;
+    border: 1px solid #cbd9ce;
+    border-radius: 0.45rem;
+    font: inherit;
+}
+
+.budget-form input:focus {
+    border-color: #176b4d;
+    outline: 2px solid #8bd0a8;
+    outline-offset: 1px;
+}
+
+.expense-entry {
+    display: grid;
+    grid-template-columns: minmax(8rem, 1.3fr) minmax(7rem, 0.8fr) minmax(8rem, 1fr) minmax(9rem, 1fr) auto;
+    align-items: end;
+    gap: 0.7rem;
+    margin-bottom: 0.8rem;
+}
+
+.secondary-button,
+.remove-expense {
+    padding: 0.55rem 0.8rem;
+    color: #176b4d;
+    background: #eaf4ed;
+}
+
+.secondary-button:hover,
+.remove-expense:hover {
+    color: #fff;
+    background: #10583e;
+}
+
+.remove-expense {
+    white-space: nowrap;
+}
+
+.form-message {
+    margin: 0;
+    color: #a22b2b;
+}
+
+.budget-summary {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #dce9df;
+}
+
+.budget-summary h3 {
+    margin: 0 0 1rem;
+}
+
+.totals {
+    margin: 0;
+}
+
+.totals > div,
+#expense-list li {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid #edf2ee;
+}
+
+.totals dt {
+    color: #53685f;
+}
+
+.totals dd {
+    margin: 0;
+    font-weight: 700;
+    text-align: right;
+}
+
+.totals .balance {
+    color: #176b4d;
+    font-size: 1.1rem;
+}
+
+.budget-summary h4 {
+    margin: 1.5rem 0 0.4rem;
+}
+
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+th,
+td {
+    padding: 0.7rem;
+    border-bottom: 1px solid #edf2ee;
+}
+
+th {
+    color: #53685f;
+    font-size: 0.9rem;
+}
+
+.tips-card {
+    margin-top: 1.5rem;
+}
+
+.tips-card h2 {
+    margin-top: 0;
+}
+
+.tips-card ul {
+    margin-bottom: 0;
+    padding-left: 1.3rem;
+}
+
+footer {
+    padding: 1rem;
+    color: #53685f;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media (max-width: 32rem) {
+    .expense-entry {
+        grid-template-columns: 1fr;
+    }
+
+    .remove-expense {
+        justify-self: start;
+    }
+}
